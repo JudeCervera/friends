@@ -14,3 +14,7 @@ You can access the website here: [https://judecervera.github.io/friends/](https:
 
 **v1.0** (9/9/25)
 * Initial website release.
+
+---
+
+© 2025 Jude Cervera. All Rights Reserved.
