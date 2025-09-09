@@ -1,0 +1,231 @@
+:root {
+    --bg-color: #1a1a2e;
+    --primary-color: #00e5ff;
+    --secondary-color: #e4007c;
+    --text-color: #f0f0f0;
+    --center-node-size: 120px;
+    --friend-node-size: 80px;
+    --orbit-radius: 250px;
+    --animation-duration: 25s;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.cof-container {
+    position: relative;
+    width: calc(var(--orbit-radius) * 2 + var(--friend-node-size));
+    height: calc(var(--orbit-radius) * 2 + var(--friend-node-size));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-node {
+    width: var(--center-node-size);
+    height: var(--center-node-size);
+    background: radial-gradient(circle, var(--primary-color), #162447);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 25px var(--primary-color), inset 0 0 15px rgba(255,255,255,0.3);
+    border: 2px solid var(--primary-color);
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.friend-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: center;
+    animation: orbit var(--animation-duration) linear infinite;
+}
+
+.cof-container:hover .friend-path {
+    animation-play-state: paused;
+}
+
+.friend-node {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%) translateX(var(--orbit-radius));
+    width: var(--friend-node-size);
+    height: var(--friend-node-size);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.friend-node:hover {
+    transform: translate(-50%, -50%) translateX(var(--orbit-radius)) scale(1.2);
+    z-index: 20;
+}
+
+.friend-node img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+.friend-node .friend-name {
+    position: absolute;
+    bottom: -25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.friend-node:hover .friend-name {
+    opacity: 1;
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--orbit-radius);
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-color));
+    transform-origin: left;
+    transform: translateY(-50%);
+    opacity: 0.3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-color);
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+    color: var(--primary-color);
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 25px var(--primary-color); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px var(--primary-color); }
+    100% { transform: scale(1); box-shadow: 0 0 25px var(--primary-color); }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --center-node-size: 90px;
+        --friend-node-size: 65px;
+        --orbit-radius: 150px;
+    }
+    .center-node { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --orbit-radius: 120px;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 100;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+}
