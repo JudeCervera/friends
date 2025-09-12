@@ -26,28 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 3,
             name: "Charlie",
-            imageUrl: "images/charlie.svg",
+            imageUrl: "images/Charlie.svg",
             bio: "Charlie is a musician who can play five instruments. He brings the rhythm and good vibes everywhere.",
             facebookUrl: "https://www.facebook.com/charlie-profile"
         },
         {
             id: 4,
             name: "Diana",
-            imageUrl: "images/diana.svg",
+            imageUrl: "images/Diana.svg",
             bio: "Diana is a travel blogger exploring the world one city at a time. She has the best stories to tell.",
             facebookUrl: "https://www.facebook.com/diana-profile"
         },
         {
             id: 5,
             name: "Evan",
-            imageUrl: "images/evan.svg",
+            imageUrl: "images/Evan.svg",
             bio: "Evan is a chef who loves experimenting with new recipes. He hosts the best dinner parties.",
             facebookUrl: "https://www.facebook.com/evan-profile"
         },
         {
             id: 6,
             name: "Fiona",
-            imageUrl: "images/fiona.svg",
+            imageUrl: "images/Fiona.svg",
             bio: "Fiona is a fitness coach and a marathon runner. She motivates everyone to stay active and healthy.",
             facebookUrl: "https://www.facebook.com/fiona-profile"
         }
