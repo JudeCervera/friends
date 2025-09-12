@@ -19,35 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 2,
             name: "Bob",
-            imageUrl: "images/Bob.svg",
+            imageUrl: "images/bob.svg",
             bio: "Bob is a software engineer with a passion for gaming and building complex Lego sets. The logical one.",
             facebookUrl: "https://www.facebook.com/bob-profile"
         },
         {
             id: 3,
             name: "Charlie",
-            imageUrl: "images/Charlie.svg",
+            imageUrl: "images/charlie.svg",
             bio: "Charlie is a musician who can play five instruments. He brings the rhythm and good vibes everywhere.",
             facebookUrl: "https://www.facebook.com/charlie-profile"
         },
         {
             id: 4,
             name: "Diana",
-            imageUrl: "images/Diana.svg",
+            imageUrl: "images/diana.svg",
             bio: "Diana is a travel blogger exploring the world one city at a time. She has the best stories to tell.",
             facebookUrl: "https://www.facebook.com/diana-profile"
         },
         {
             id: 5,
             name: "Evan",
-            imageUrl: "images/Evan.svg",
+            imageUrl: "images/evan.svg",
             bio: "Evan is a chef who loves experimenting with new recipes. He hosts the best dinner parties.",
             facebookUrl: "https://www.facebook.com/evan-profile"
         },
         {
             id: 6,
             name: "Fiona",
-            imageUrl: "images/Fiona.svg",
+            imageUrl: "images/fiona.svg",
             bio: "Fiona is a fitness coach and a marathon runner. She motivates everyone to stay active and healthy.",
             facebookUrl: "https://www.facebook.com/fiona-profile"
         }
